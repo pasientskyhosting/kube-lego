@@ -1,4 +1,4 @@
-ACCOUNT=jetstack
+ACCOUNT=pasientskyhosting
 APP_NAME=kube-lego
 
 PACKAGE_NAME=github.com/${ACCOUNT}/${APP_NAME}
@@ -17,7 +17,7 @@ PACKAGES=$(shell find . -name "*_test.go" | xargs -n1 dirname | sort -u | xargs 
 
 codegen:
 	which mockgen
-	mockgen -imports .=github.com/jetstack/kube-lego/pkg/kubelego_const -package=mocks -source=pkg/kubelego_const/interfaces.go > pkg/mocks/mocks.go
+	mockgen -imports .=github.com/pasientskyhosting/kube-lego/pkg/kubelego_const -package=mocks -source=pkg/kubelego_const/interfaces.go > pkg/mocks/mocks.go
 
 depend:
 	rm -rf $(TEST_DIR)/
